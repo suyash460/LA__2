@@ -1,26 +1,17 @@
-const express = require("express");
-const app = express();
-const PORT = 3000;
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
 
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById('root')
+);
 
-app.use('/moon', express.static('public'));
-app.use('/sun', express.static('images'));
-
-app.get('/', (req, res) => {
-    res.send("This is LA_2");
-});
-
-app.get('/moon', (req, res) => {
-    res.send("Welcome");
-});
-
-app.get('/sun', (req, res) => {
-    res.send("Welcome");
-});
-
-
-app.listen(PORT, ()=> console.log(`Server Listening on port : ${PORT}`));
-
-
-
-
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
